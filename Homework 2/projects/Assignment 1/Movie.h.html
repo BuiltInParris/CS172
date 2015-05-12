@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<TITLE>
+Movie.h
+</TITLE>
+</HEAD>
+<BODY>
+<PRE>
+<font color="green">// ----------------------------------------------------------------------------</font>
+<font color="green">//</font>
+<font color="green">//  Movie class</font>
+<font color="green">//    Header</font>
+<font color="green">//</font>
+<font color="green">//  This class represents a movie, featuring a title, director, rating, </font>
+<font color="green">//  year of release, and URL for further information in the Internet</font>
+<font color="green">//  Movie Database (IMDB, http://www.imdb.com ) .</font>
+<font color="green">//</font>
+<font color="green">// ----------------------------------------------------------------------------</font>
+<font color="green">//</font>
+<font color="green">//  Author:         JL Popyack</font>
+<font color="green">//  Date:           4/4/4</font>
+<font color="green">//  Modified:       4/2/14  -- JL Popyack, removed destructor</font>
+<font color="green">//</font>
+<font color="green">// ----------------------------------------------------------------------------</font>
+    <font color="blue">#ifndef</font> _MOVIE_
+    <font color="blue">#define</font> _MOVIE_
+
+    <font color="blue">#include</font> <font color="maroon">&#60;iostream&#62;</font>
+    <font color="blue">#include</font> <font color="maroon">&#60;string&#62;</font>
+    <font color="blue">#include</font> <font color="maroon">&#60;vector&#62;</font>
+    
+    <font color="blue">using</font> <font color="blue">namespace</font> std;
+    
+    <font color="blue">enum</font> Movie_Rating <font color="black">{</font> G, PG, PG13, R, NC17, NR <font color="black">}</font>;
+
+<font color="green">// ----------------------------------------------------------------------------</font>
+<font color="green">// ----------------------------------------------------------------------------</font>
+
+    <font color="blue">class</font> Movie
+    <font color="black">{</font>
+      
+        <font color="blue">public</font><font color="black">:</font>
+        <font color="green">// ------------------------------------------------------</font>
+        <font color="green">// ----- Constructors -----------------------------------</font>
+        <font color="green">// ------------------------------------------------------</font>
+            
+            Movie<font color="black">(</font><font color="black">)</font>;
+            Movie<font color="black">(</font><font color="blue">const</font> string <font color="black">&</font> title<font color="black">)</font>;
+            Movie<font color="black">(</font><font color="blue">const</font> Movie <font color="black">&</font> old<font color="black">)</font>;
+            Movie<font color="black">(</font><font color="blue">const</font> string <font color="black">&</font> title, 
+                  <font color="blue">const</font> string <font color="black">&</font> director, 
+                  Movie_Rating rating,
+                  <font color="blue">unsigned</font> <font color="blue">int</font> year,
+                  <font color="blue">const</font> string <font color="black">&</font> path,
+                  vector<font color="black">&#60;</font>string<font color="black">&#62;</font> actors<font color="black">)</font> ;
+            
+        <font color="green">// ------------------------------------------------------</font>
+        <font color="green">// ----- Destructor -------------------------------------</font>
+        <font color="green">// ------------------------------------------------------</font>
+        
+            Movie<font color="black">:</font><font color="black">:</font>~Movie<font color="black">(</font><font color="black">)</font>;  <font color="green">// To be implemented in a future assignment.</font>
+        
+        <font color="green">// ------------------------------------------------------</font>
+        <font color="green">// ----- Inspectors -------------------------------------</font>
+        <font color="green">// ------------------------------------------------------</font>
+
+            string getTitle<font color="black">(</font><font color="black">)</font> <font color="blue">const</font>;
+            string getDirector<font color="black">(</font><font color="black">)</font> <font color="blue">const</font>;
+            Movie_Rating getRating<font color="black">(</font><font color="black">)</font> <font color="blue">const</font>;
+            <font color="blue">unsigned</font> <font color="blue">int</font> getYear<font color="black">(</font><font color="black">)</font> <font color="blue">const</font>;
+            string getURL<font color="black">(</font><font color="black">)</font> <font color="blue">const</font>;
+            <font color="blue">int</font> getNumberOfActors<font color="black">(</font><font color="black">)</font> <font color="blue">const</font>;
+            string getActorName<font color="black">(</font><font color="blue">int</font> i<font color="black">)</font> <font color="blue">const</font>;
+
+        <font color="green">// ------------------------------------------------------</font>
+        <font color="green">// ----- Mutators ---------------------------------------</font>
+        <font color="green">// ------------------------------------------------------</font>
+
+            <font color="blue">void</font> output<font color="black">(</font>ostream <font color="black">&</font> out<font color="black">)</font>;
+            <font color="blue">void</font> setDirector<font color="black">(</font><font color="blue">const</font> string<font color="black">&</font> director<font color="black">)</font>;
+            <font color="blue">void</font> setRating<font color="black">(</font>Movie_Rating rating<font color="black">)</font>;
+            <font color="blue">void</font> setYear<font color="black">(</font><font color="blue">unsigned</font> <font color="blue">int</font> year<font color="black">)</font>;
+            <font color="blue">void</font> setURL<font color="black">(</font><font color="blue">const</font> string<font color="black">&</font> path<font color="black">)</font>;
+            <font color="blue">void</font> addActor<font color="black">(</font><font color="blue">const</font> string <font color="black">&</font> <font color="blue">name</font><font color="black">)</font>;
+            
+
+    <font color="green">// ----------------------------------------------------------</font>
+    <font color="green">// ----------------------------------------------------------</font>
+
+    <font color="blue">private</font><font color="black">:</font>
+        string title_ ;
+        string director_ ;
+        Movie_Rating rating_ ;
+        <font color="blue">unsigned</font> <font color="blue">int</font> year_ ;
+        string url_ ;
+        vector <font color="black">&#60;</font>string<font color="black">&#62;</font> actors_ ;
+    <font color="black">}</font>;
+    <font color="blue">#endif</font>
+</PRE>
+</BODY>
+</HTML>

@@ -1,0 +1,192 @@
+<HTML>
+<HEAD>
+<TITLE>
+Movie_test.cpp
+</TITLE>
+</HEAD>
+<BODY>
+<PRE>
+<font color="green">//----------------------------------------------------------------------------</font>
+<font color="green">//</font>
+<font color="green">//------------------------------ Movie_Tester ------------------------------</font>
+<font color="green">//</font>
+<font color="green">//----------------------------------------------------------------------------</font>
+<font color="green">//</font>
+<font color="green">//  Author:         Stevie Parris</font>
+<font color="green">//  Date:           4/7/14</font>
+<font color="green">//  Modified:       4/8/14  -- Stevie Parris, added comments to code</font>
+<font color="green">//</font>
+<font color="green">// ----------------------------------------------------------------------------</font>
+
+<font color="blue">#include</font> <font color="maroon">&#60;iostream&#62;</font>
+<font color="blue">#include</font> <font color="maroon">&#60;string&#62;</font>
+<font color="blue">#include</font> <font color="maroon">&#60;sstream&#62;</font>
+<font color="blue">#include</font> <font color="maroon">&#60;fstream&#62;</font>
+
+<font color="blue">#include</font> <font color="maroon">&#60;vector&#62;</font>
+<font color="blue">#include</font> <font color="maroon">"Movie.h"</font>
+
+<font color="blue">using</font> std<font color="black">:</font><font color="black">:</font>cout;
+<font color="blue">using</font> std<font color="black">:</font><font color="black">:</font>cin;
+<font color="blue">using</font> std<font color="black">:</font><font color="black">:</font>endl;
+
+<font color="green">//----------------------------------------------------------------------------</font>
+<font color="green">//</font>
+<font color="green">//------------------------------- Prototypes -------------------------------</font>
+<font color="green">//</font>
+<font color="green">//----------------------------------------------------------------------------</font>
+
+<font color="blue">void</font> promptForMovie<font color="black">(</font>Movie <font color="black">&</font> myMovie<font color="black">)</font>;
+Movie_Rating stringToRating<font color="black">(</font>string rating<font color="black">)</font>;
+
+<font color="green">//----------------------------------------------------------------------------</font>
+<font color="green">//</font>
+<font color="green">//------------------------------- Main Program -------------------------------</font>
+<font color="green">//</font>
+<font color="green">//----------------------------------------------------------------------------</font>
+
+
+<font color="blue">int</font> main<font color="black">(</font><font color="blue">void</font><font color="black">)</font>
+<font color="black">{</font>
+    <font color="green">//declare variables</font>
+    string temp, real_title, real_director, rating, year, real_url;
+    <font color="blue">int</font> real_year, j <font color="black">=</font> <font color="maroon">0</font>;
+    Movie_Rating real_rating;
+    vector<font color="black">&#60;</font>Movie<font color="black">&#62;</font> storage;
+    vector<font color="black">&#60;</font>string<font color="black">&#62;</font> actors;
+
+    <font color="green">//Open file</font>
+    ofstream myfile;
+    myfile.open<font color="black">(</font><font color="maroon">"example.txt"</font><font color="black">)</font>;
+
+    <font color="green">//Create movies</font>
+    Movie movie1<font color="black">(</font><font color="maroon">"Back To The Future"</font><font color="black">)</font>, movie2;
+
+    <font color="green">//Set information for the first movie</font>
+    movie1.setDirector<font color="black">(</font><font color="maroon">"Robert Zemeckis"</font><font color="black">)</font>;
+    movie1.setRating<font color="black">(</font>PG<font color="black">)</font>;
+    movie1.setYear<font color="black">(</font><font color="maroon">1985</font><font color="black">)</font>;
+    movie1.setURL<font color="black">(</font><font color="maroon">"http://www.imdb.com/title/tt0088763/"</font><font color="black">)</font>;
+    movie1.addActor<font color="black">(</font><font color="maroon">"John Wayne"</font><font color="black">)</font>;
+    movie1.addActor<font color="black">(</font><font color="maroon">"Bill Cosby"</font><font color="black">)</font>;
+    movie1.addActor<font color="black">(</font><font color="maroon">"Ryan Seacrest"</font><font color="black">)</font>;
+
+    <font color="green">// TRON: Legacy // Joseph Kosinski // PG // 2010 http://www.imdb.com/title/tt1104001/</font>
+    promptForMovie<font color="black">(</font>movie2<font color="black">)</font>;
+
+    cout <font color="black">&#60;</font><font color="black">&#60;</font> endl;
+
+    <font color="green">//accept file input</font>
+    ifstream fin<font color="black">(</font><font color="maroon">"Movie_setup_spp53.txt"</font><font color="black">)</font>;
+
+    <font color="green">//get movie info</font>
+    <font color="blue">while</font> <font color="black">(</font>getline<font color="black">(</font>fin, real_title<font color="black">)</font><font color="black">)</font>
+    <font color="black">{</font>
+        getline<font color="black">(</font>fin, real_title<font color="black">)</font>;
+        getline<font color="black">(</font>fin, real_director<font color="black">)</font>;
+        getline<font color="black">(</font>fin, rating<font color="black">)</font>;
+        real_rating <font color="black">=</font> stringToRating<font color="black">(</font>rating<font color="black">)</font>;
+        getline<font color="black">(</font>fin, year<font color="black">)</font>;
+        real_year <font color="black">=</font> atoi<font color="black">(</font>year.c_str<font color="black">(</font><font color="black">)</font><font color="black">)</font>;
+        getline<font color="black">(</font>fin, real_url<font color="black">)</font>;
+
+
+        string holder;
+
+        <font color="green">//get all actors till reaching end of file or "$$$$", end marker</font>
+        <font color="blue">while</font> <font color="black">(</font>getline<font color="black">(</font>fin, holder<font color="black">)</font> <font color="black">&</font><font color="black">&</font> holder <font color="black">!</font><font color="black">=</font> <font color="maroon">"$$$$"</font><font color="black">)</font>
+        <font color="black">{</font>
+            actors.push_back<font color="black">(</font>holder<font color="black">)</font>; <font color="green">//add another actor to the vector</font>
+        <font color="black">}</font>
+
+        <font color="green">//Create movie object</font>
+        Movie amovie<font color="black">(</font>real_title, real_director, real_rating, real_year, real_url, actors<font color="black">)</font>;
+        storage.push_back<font color="black">(</font>amovie<font color="black">)</font>; <font color="green">//add movie to an vector to be recalled later</font>
+        actors.resize<font color="black">(</font><font color="maroon">0</font><font color="black">)</font>; <font color="green">//empty actors vector</font>
+        j<font color="black">+</font><font color="black">+</font>; <font color="green">//count number of movie</font>
+    <font color="black">}</font>
+    fin.close<font color="black">(</font><font color="black">)</font>; <font color="green">// close file</font>
+    
+    <font color="green">//output movies</font>
+    movie1.output<font color="black">(</font>std<font color="black">:</font><font color="black">:</font>cout<font color="black">)</font>;
+    movie2.output<font color="black">(</font>std<font color="black">:</font><font color="black">:</font>cout<font color="black">)</font>;
+    <font color="green">//pull movies from the array storage</font>
+    <font color="blue">for</font> <font color="black">(</font><font color="blue">int</font> r <font color="black">=</font> <font color="maroon">0</font>; r <font color="black">&#60;</font> j; r<font color="black">+</font><font color="black">+</font><font color="black">)</font>
+    <font color="black">{</font>
+        Movie myMovie <font color="black">=</font> storage<font color="black">[</font>r<font color="black">]</font>;
+        myMovie.output<font color="black">(</font>std<font color="black">:</font><font color="black">:</font>cout<font color="black">)</font>;
+    <font color="black">}</font>
+    <font color="green">//Output movies to file</font>
+    movie1.output<font color="black">(</font>myfile<font color="black">)</font>;
+    movie2.output<font color="black">(</font>myfile<font color="black">)</font>;
+    <font color="blue">for</font> <font color="black">(</font><font color="blue">int</font> r <font color="black">=</font> <font color="maroon">0</font>; r <font color="black">&#60;</font> j; r<font color="black">+</font><font color="black">+</font><font color="black">)</font>
+    <font color="black">{</font>
+        Movie myMovie <font color="black">=</font> storage<font color="black">[</font>r<font color="black">]</font>;
+        myMovie.output<font color="black">(</font>myfile<font color="black">)</font>;
+    <font color="black">}</font>
+    <font color="green">//Close file</font>
+    myfile.close<font color="black">(</font><font color="black">)</font>;
+
+    <font color="green">//Pause progam for user to review output</font>
+    system<font color="black">(</font><font color="maroon">"pause"</font><font color="black">)</font>;
+
+    <font color="blue">return</font> <font color="maroon">0</font>;
+<font color="black">}</font>
+
+<font color="green">// This function is passed a movie object, and then asks the user for information to assign to the movie object.</font>
+<font color="blue">void</font> promptForMovie<font color="black">(</font>Movie <font color="black">&</font> myMovie<font color="black">)</font>
+<font color="black">{</font>
+    <font color="green">//declare variables</font>
+    string movieTitle, director, rating, url, noactor; 
+    <font color="blue">int</font> year;
+    Movie_Rating nmRating;
+    vector<font color="black">&#60;</font>string<font color="black">&#62;</font> actor;
+
+    <font color="green">//Interface with user</font>
+    cout <font color="black">&#60;</font><font color="black">&#60;</font> <font color="maroon">"Please enter the name of the movie: "</font>;
+    getline<font color="black">(</font>cin, movieTitle<font color="black">)</font>;
+    cout <font color="black">&#60;</font><font color="black">&#60;</font> <font color="maroon">"Please enter the director of the movie: "</font>;
+    getline<font color="black">(</font>cin, director<font color="black">)</font>;
+    cout <font color="black">&#60;</font><font color="black">&#60;</font> <font color="maroon">"Please enter the rating of the movie (G, PG, PG13, R, NC17, NR): "</font>;
+    getline<font color="black">(</font>cin, rating<font color="black">)</font>;
+    nmRating <font color="black">=</font> stringToRating<font color="black">(</font>rating<font color="black">)</font>; <font color="green">//change from string to Movie_Rating type</font>
+
+    <font color="green">// Interface with user</font>
+    cout <font color="black">&#60;</font><font color="black">&#60;</font> <font color="maroon">"Please enter the year of the movie: "</font>;
+    cin <font color="black">&#62;</font><font color="black">&#62;</font> year;
+    cout <font color="black">&#60;</font><font color="black">&#60;</font> <font color="maroon">"Please enter the url of the movie: "</font>;
+    cin.ignore<font color="black">(</font><font color="black">)</font>; <font color="green">//to return to getline</font>
+    getline<font color="black">(</font>cin, url<font color="black">)</font>;
+    cout <font color="black">&#60;</font><font color="black">&#60;</font> <font color="maroon">"Please enter an actor: "</font>;
+    getline<font color="black">(</font>cin, noactor<font color="black">)</font>;
+    actor <font color="black">=</font> <font color="black">{</font> noactor <font color="black">}</font>;
+
+    Movie aMovie<font color="black">(</font>movieTitle, director, nmRating, year, url, actor<font color="black">)</font>; <font color="green">//Create movie object with the values acquired</font>
+    myMovie <font color="black">=</font> aMovie; <font color="green">//assign new movie object to the old</font>
+
+    cout <font color="black">&#60;</font><font color="black">&#60;</font> endl;
+<font color="black">}</font>
+
+Movie_Rating stringToRating<font color="black">(</font>string rating<font color="black">)</font> <font color="green">// this function transforms a string to a rating or returns the default rating</font>
+<font color="black">{</font>
+    Movie_Rating nmRating;
+    <font color="green">//Convert string to Movie_Rating</font>
+    <font color="blue">if</font> <font color="black">(</font>rating <font color="black">=</font><font color="black">=</font> <font color="maroon">"G"</font><font color="black">)</font>
+        nmRating <font color="black">=</font> G;
+    <font color="blue">else</font> <font color="blue">if</font> <font color="black">(</font>rating <font color="black">=</font><font color="black">=</font> <font color="maroon">"PG"</font><font color="black">)</font>
+        nmRating <font color="black">=</font> PG;
+    <font color="blue">else</font> <font color="blue">if</font> <font color="black">(</font>rating <font color="black">=</font><font color="black">=</font> <font color="maroon">"PG13"</font><font color="black">)</font>
+        nmRating <font color="black">=</font> PG13;
+    <font color="blue">else</font> <font color="blue">if</font> <font color="black">(</font>rating <font color="black">=</font><font color="black">=</font> <font color="maroon">"R"</font><font color="black">)</font>
+        nmRating <font color="black">=</font> R;
+    <font color="blue">else</font> <font color="blue">if</font> <font color="black">(</font>rating <font color="black">=</font><font color="black">=</font> <font color="maroon">"NC17"</font><font color="black">)</font>
+        nmRating <font color="black">=</font> NC17;
+    <font color="blue">else</font> <font color="blue">if</font> <font color="black">(</font>rating <font color="black">=</font><font color="black">=</font> <font color="maroon">"NR"</font><font color="black">)</font>
+        nmRating <font color="black">=</font> NR;
+    <font color="blue">else</font>
+        nmRating <font color="black">=</font> Movie_Rating<font color="black">(</font><font color="black">)</font>;
+    <font color="blue">return</font> nmRating;
+<font color="black">}</font>
+</PRE>
+</BODY>
+</HTML>

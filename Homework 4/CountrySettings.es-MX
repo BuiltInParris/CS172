@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_adpEnabled" xml:space="preserve">
+    <value>true</value>
+  </data>
+  <data name="_backofficePrefix" xml:space="preserve">
+    <value>mx</value>
+  </data>
+  <data name="_company_logo" xml:space="preserve">
+    <value>imagesnew/sea-logo.es-MX.png</value>
+  </data>
+  <data name="_contactUs" xml:space="preserve">
+    <value>42</value>
+  </data>
+  <data name="_returnPolicy" xml:space="preserve">
+    <value>52</value>
+  </data>
+  <data name="_givingBack" xml:space="preserve">
+    <value>51</value>
+  </data>
+  <data name="_meetTheLeaders" xml:space="preserve">
+    <value>53</value>
+  </data>
+  <data name="_countryCode" xml:space="preserve">
+    <value>MX</value>
+  </data>
+  <data name="_countryFlagEnabled" xml:space="preserve">
+    <value>true</value>
+  </data>
+  <data name="_countryFullName" xml:space="preserve">
+    <value>Mexico</value>
+  </data>
+  <data name="_cultureCode" xml:space="preserve">
+    <value>es-MX</value>
+  </data>
+  <data name="_currency" xml:space="preserve">
+    <value>usm</value>
+  </data>
+  <data name="_currencyName" xml:space="preserve">
+    <value>usd</value>
+  </data>
+  <data name="_currencyHeaderName" xml:space="preserve">
+    <value>Moneda</value>
+  </data>
+  <data name="_menuProducts" xml:space="preserve">
+    <value>true</value>
+  </data>
+  <data name="_skinTypeBanner" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="_taxLineMessage" xml:space="preserve">
+    <value>Taxes</value>
+  </data>
+  <data name="_warehouseId" xml:space="preserve">
+    <value>7</value>
+    <comment>TODO_USM:Review</comment>
+  </data>
+  <data name="_webCategoryJoinPackagesId" xml:space="preserve">
+    <value>58</value>
+  </data>
+  <data name="_webCategoryStarterPackagesId" xml:space="preserve">
+    <value>71</value>
+  </data>
+  <data name="_webCategoryReplenishmentsId" xml:space="preserve">
+    <value>74</value>
+  </data>
+  <data name="_webId" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="_countryInPrelaunchHide" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="_alternateBillingInfo" xml:space="preserve">
+    <value>49</value>
+  </data>
+  <data name="_alternateBillingSummaryInstruction" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="_preMerchantPhaseAlternatePayment" xml:space="preserve">
+    <value>true</value>
+  </data>
+  <data name="_adpFreeShip" xml:space="preserve">
+    <value>65</value>
+  </data>
+  <data name="_adpStandardShip" xml:space="preserve">
+    <value>65</value>
+  </data>
+  <data name="_displayPriceTaxRate" xml:space="preserve">
+    <value>0.16</value>
+  </data>
+  <data name="_showRoundedDisplayPrices" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="_showTaxOnDisplayPrice_Packages" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="_showTaxOnDisplayPrice_ADP" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="_showTaxOnDisplayPrice_Products" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="_displayPrivacyNotice" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="_preferredCustomerSignupEnabled" xml:space="preserve">
+    <value>true</value>
+  </data>
+  <data name="_countryFAQ" xml:space="preserve">
+    <value>54</value>
+  </data>
+  <data name="_menuGiftsEnabled" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="_backofficeDisabled" xml:space="preserve">
+    <value>true</value>
+  </data>
+  <data name="_defaultCustomerType" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="_defaultCountryLanguageID" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="_defaultCustomerStatus" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="_userCanLogin" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="_defaultPaymentMethod" xml:space="preserve">
+    <value>ExpectedPayment</value>
+  </data>
+  <data name="_Logo_BoHeader" xml:space="preserve">
+    <value>Assets/Images/Logo_BoHeader.es-MX.jpg</value>
+  </data>
+  <data name="facebook_url" xml:space="preserve">
+    <value>SeacretDirecto</value>
+  </data>
+  <data name="countryDateFormat" xml:space="preserve">
+    <value>{0: dd/MM/yyyy}</value>
+  </data>
+  <data name="countryDateFormatRaw" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
+  </data>
+  <data name="_menuMarketingToolsEnabled" xml:space="preserve">
+    <value>true</value>
+  </data>
+  <data name="_menuWebinarsEnabled" xml:space="preserve">
+    <value>true</value>
+  </data>
+  <data name="_checkoutPaymentEnabled" xml:space="preserve">
+    <value>true</value>
+  </data>
+  <data name="_paymentMethodInstantPaymentEnabled" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="_defaultShippingMethod" xml:space="preserve">
+    <value>64</value>
+    <comment>Mexico Standard Shipping</comment>
+  </data>
+  <data name="_preferredCustomerSignupURL" xml:space="preserve">
+    <value>http://global.seacretdirect.com/checkout.aspx</value>
+  </data>
+  <data name="_menu_product_age_defying" xml:space="preserve">
+    <value>229</value>
+  </data>
+  <data name="_menu_product_facial_care" xml:space="preserve">
+    <value>225</value>
+  </data>
+  <data name="_menu_product_for_men" xml:space="preserve">
+    <value>227</value>
+  </data>
+  <data name="_menu_product_recover" xml:space="preserve">
+    <value>228</value>
+  </data>
+  <data name="_menu_product_skin_care" xml:space="preserve">
+    <value>226</value>
+  </data>
+  <data name="_stateCodeRequiresLookup" xml:space="preserve">
+    <value>false</value>
+    <comment>Use GetRegionCode to get description</comment>
+  </data>
+  <data name="_payPal_merchant_enabled" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="_currencySymbol" xml:space="preserve">
+    <value>$</value>
+  </data>
+  <data name="_currencyFractionDigits" xml:space="preserve">
+    <value>0</value>
+    <comment>Digits to display for pricing.</comment>
+  </data>
+  <data name="_roundPrices" xml:space="preserve">
+    <value>true</value>
+  </data>
+  <data name="_calculateInternationalProcessingFee" xml:space="preserve">
+    <value>true</value>
+    <comment>Internatioanl processing fee is currently on for for Mexico</comment>
+  </data>
+  <data name="_calculateInternationalProcessingFee_OnReviewPages" xml:space="preserve">
+    <value>false</value>
+    <comment>Internatioanl processing fee for SQL Order Calculation does not until the order review page.</comment>
+  </data>
+  <data name="_oneTimeOnly" xml:space="preserve">
+    <value>false</value>
+  </data>
+</root>

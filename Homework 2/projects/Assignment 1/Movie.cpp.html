@@ -1,0 +1,173 @@
+<HTML>
+<HEAD>
+<TITLE>
+Movie.cpp
+</TITLE>
+</HEAD>
+<BODY>
+<PRE>
+
+
+<font color="blue">#include</font> <font color="maroon">"Movie.h"</font>
+<font color="blue">#include</font> <font color="maroon">&#60;cstdlib&#62;</font>
+<font color="blue">#include</font> <font color="maroon">&#60;ciso646&#62;</font>
+<font color="blue">#include</font> <font color="maroon">&#60;sstream&#62;</font> <font color="green">// used to convert streams to strings</font>
+<font color="blue">#include</font> <font color="maroon">&#60;iostream&#62;</font>
+<font color="blue">#include</font> <font color="maroon">&#60;vector&#62;</font>
+
+<font color="blue">using</font> <font color="blue">namespace</font> std;
+
+vector<font color="black">&#60;</font>string<font color="black">&#62;</font> blank;
+
+<font color="green">//Blank Movie constructor, if no parameters, set values to null</font>
+Movie<font color="black">:</font><font color="black">:</font>Movie<font color="black">(</font><font color="black">)</font>
+<font color="black">{</font>
+    title_ <font color="black">=</font> <font color="maroon">""</font>;
+    director_ <font color="black">=</font> <font color="maroon">""</font>;
+    rating_ <font color="black">=</font> Movie_Rating<font color="black">(</font><font color="black">)</font>;
+    year_ <font color="black">=</font> <font color="maroon">0</font>;
+    url_ <font color="black">=</font> <font color="maroon">""</font>;
+    actors_;
+<font color="black">}</font>
+
+<font color="green">//Title Movie constructor, if only title, assign title value and leave rest blank</font>
+Movie<font color="black">:</font><font color="black">:</font>Movie<font color="black">(</font><font color="blue">const</font> string<font color="black">&</font> title<font color="black">)</font>
+<font color="black">{</font>
+    title_ <font color="black">=</font> title;
+    director_ <font color="black">=</font> <font color="maroon">""</font>;
+    rating_ <font color="black">=</font> Movie_Rating<font color="black">(</font><font color="black">)</font>;
+    year_ <font color="black">=</font> <font color="maroon">0</font>;
+    url_ <font color="black">=</font> <font color="maroon">""</font>;
+    actors_;
+<font color="black">}</font>
+
+<font color="green">//Full Movie constructor, assign values passed to the attributes of the object in the class</font>
+Movie<font color="black">:</font><font color="black">:</font>Movie<font color="black">(</font><font color="blue">const</font> string<font color="black">&</font> title <font color="black">=</font> <font color="maroon">""</font>, 
+             <font color="blue">const</font> string<font color="black">&</font> director <font color="black">=</font> <font color="maroon">""</font>,
+             Movie_Rating rating <font color="black">=</font> Movie_Rating<font color="black">(</font><font color="black">)</font>,
+             <font color="blue">unsigned</font> <font color="blue">int</font> year <font color="black">=</font> <font color="maroon">0</font>,
+             <font color="blue">const</font> string<font color="black">&</font> path <font color="black">=</font> <font color="maroon">""</font>, 
+             vector<font color="black">&#60;</font>string<font color="black">&#62;</font> actors <font color="black">=</font> blank<font color="black">)</font>
+<font color="black">{</font>
+    title_ <font color="black">=</font> title;
+    director_ <font color="black">=</font> director;
+    rating_ <font color="black">=</font> rating;
+    year_ <font color="black">=</font> year;
+    url_ <font color="black">=</font> path;
+    actors_ <font color="black">=</font> actors;
+<font color="black">}</font>
+
+<font color="green">//copy constructor</font>
+Movie<font color="black">:</font><font color="black">:</font>Movie<font color="black">(</font><font color="blue">const</font> Movie <font color="black">&</font> old<font color="black">)</font>
+<font color="black">{</font>
+    <font color="blue">this</font><font color="black">-</font><font color="black">&#62;</font>title_ <font color="black">=</font> old.title_;
+    <font color="blue">this</font><font color="black">-</font><font color="black">&#62;</font>director_ <font color="black">=</font> old.director_;
+    <font color="blue">this</font><font color="black">-</font><font color="black">&#62;</font>rating_ <font color="black">=</font> old.rating_;
+    <font color="blue">this</font><font color="black">-</font><font color="black">&#62;</font>year_ <font color="black">=</font> old.year_;
+    <font color="blue">this</font><font color="black">-</font><font color="black">&#62;</font>url_ <font color="black">=</font> old.url_;
+    <font color="blue">this</font><font color="black">-</font><font color="black">&#62;</font>actors_ <font color="black">=</font> old.actors_;
+<font color="black">}</font>
+
+
+Movie<font color="black">:</font><font color="black">:</font>~Movie<font color="black">(</font><font color="black">)</font>
+<font color="black">{</font>
+    actors_.resize<font color="black">(</font><font color="maroon">0</font><font color="black">)</font>;
+<font color="black">}</font>
+
+string Movie<font color="black">:</font><font color="black">:</font>getTitle<font color="black">(</font><font color="black">)</font> <font color="blue">const</font>
+<font color="black">{</font>
+    <font color="blue">return</font> title_;
+<font color="black">}</font>
+
+string Movie<font color="black">:</font><font color="black">:</font>getDirector<font color="black">(</font><font color="black">)</font> <font color="blue">const</font>
+<font color="black">{</font>
+    <font color="blue">return</font> director_;
+<font color="black">}</font>
+
+Movie_Rating Movie<font color="black">:</font><font color="black">:</font>getRating<font color="black">(</font><font color="black">)</font> <font color="blue">const</font>
+<font color="black">{</font>
+    <font color="blue">return</font> rating_;
+<font color="black">}</font>
+
+<font color="blue">unsigned</font> <font color="blue">int</font> Movie<font color="black">:</font><font color="black">:</font>getYear<font color="black">(</font><font color="black">)</font> <font color="blue">const</font>
+<font color="black">{</font>
+    <font color="blue">return</font> year_;
+<font color="black">}</font>
+string Movie<font color="black">:</font><font color="black">:</font>getURL<font color="black">(</font><font color="black">)</font> <font color="blue">const</font>
+<font color="black">{</font>
+    <font color="blue">return</font> url_;
+<font color="black">}</font>
+<font color="blue">int</font> Movie<font color="black">:</font><font color="black">:</font>getNumberOfActors<font color="black">(</font><font color="black">)</font> <font color="blue">const</font>
+<font color="black">{</font>
+    <font color="blue">return</font> actors_.size<font color="black">(</font><font color="black">)</font>;
+<font color="black">}</font>
+string Movie<font color="black">:</font><font color="black">:</font>getActorName<font color="black">(</font><font color="blue">int</font> i<font color="black">)</font> <font color="blue">const</font>
+<font color="black">{</font>
+    <font color="blue">if</font> <font color="black">(</font><font color="maroon">0</font> <font color="black">&#60;</font><font color="black">=</font> i <font color="black">&</font><font color="black">&</font> i <font color="black">&#60;</font><font color="black">=</font> getNumberOfActors<font color="black">(</font><font color="black">)</font><font color="black">)</font>
+        <font color="blue">return</font> actors_<font color="black">[</font>i<font color="black">]</font>;
+    <font color="blue">else</font>
+        <font color="blue">return</font> <font color="maroon">""</font>;
+<font color="black">}</font>
+
+
+<font color="blue">void</font> Movie<font color="black">:</font><font color="black">:</font>setDirector<font color="black">(</font><font color="blue">const</font> string<font color="black">&</font> director<font color="black">)</font>
+<font color="black">{</font>   
+    director_ <font color="black">=</font> director;
+<font color="black">}</font>
+<font color="blue">void</font> Movie<font color="black">:</font><font color="black">:</font>setRating<font color="black">(</font>Movie_Rating rating<font color="black">)</font>
+<font color="black">{</font>
+    rating_ <font color="black">=</font> rating;
+<font color="black">}</font>
+<font color="blue">void</font> Movie<font color="black">:</font><font color="black">:</font>setYear<font color="black">(</font><font color="blue">unsigned</font> <font color="blue">int</font> year<font color="black">)</font>
+<font color="black">{</font>
+    year_ <font color="black">=</font> year;
+<font color="black">}</font>
+<font color="blue">void</font> Movie<font color="black">:</font><font color="black">:</font>setURL<font color="black">(</font><font color="blue">const</font> string<font color="black">&</font> path<font color="black">)</font>
+<font color="black">{</font>
+    url_ <font color="black">=</font> path;
+<font color="black">}</font>
+
+<font color="blue">void</font> Movie<font color="black">:</font><font color="black">:</font>addActor<font color="black">(</font><font color="blue">const</font> string <font color="black">&</font> <font color="blue">name</font><font color="black">)</font>
+<font color="black">{</font>
+    actors_.push_back<font color="black">(</font><font color="blue">name</font><font color="black">)</font>;
+<font color="black">}</font>
+
+<font color="blue">void</font>  Movie<font color="black">:</font><font color="black">:</font>output<font color="black">(</font>ostream <font color="black">&</font> out<font color="black">)</font>
+<font color="black">{</font>
+    Movie_Rating rating <font color="black">=</font> <font color="blue">this</font><font color="black">-</font><font color="black">&#62;</font>getRating<font color="black">(</font><font color="black">)</font>;
+    string nmRating;
+    <font color="green">//this-&#62;command() is the same as (*this).command()</font>
+    <font color="green">//both of these call the object that you call the function on Ex:</font>
+    <font color="green">// Movie.getRating(PARAMETER)   "Movie" is the (*this)    or   this-&#62;</font>
+
+    <font color="green">// so, when you're trying to compare two different English_length's, you use the object argument and the one it's being performed on.</font>
+    <font color="green">//"Movie" is the thing it's being performed on, PARAMETER is the object argument, then you just compare their values</font>
+
+    <font color="green">// Convert Movie_Rating to string</font>
+    <font color="blue">if</font> <font color="black">(</font>rating <font color="black">=</font><font color="black">=</font> G<font color="black">)</font>
+        nmRating <font color="black">=</font> <font color="maroon">"G"</font>;
+    <font color="blue">if</font> <font color="black">(</font>rating <font color="black">=</font><font color="black">=</font> PG<font color="black">)</font>
+        nmRating <font color="black">=</font> <font color="maroon">"PG"</font>;
+    <font color="blue">if</font> <font color="black">(</font>rating <font color="black">=</font><font color="black">=</font> PG13<font color="black">)</font>
+        nmRating <font color="black">=</font> <font color="maroon">"PG13"</font>;
+    <font color="blue">if</font> <font color="black">(</font>rating <font color="black">=</font><font color="black">=</font> R<font color="black">)</font>
+        nmRating <font color="black">=</font> <font color="maroon">"R"</font>;
+    <font color="blue">if</font> <font color="black">(</font>rating <font color="black">=</font><font color="black">=</font> NC17<font color="black">)</font>
+        nmRating <font color="black">=</font> <font color="maroon">"NC17"</font>;
+    <font color="blue">if</font> <font color="black">(</font>rating <font color="black">=</font><font color="black">=</font> NR<font color="black">)</font>
+        nmRating <font color="black">=</font> <font color="maroon">"NR"</font>;
+
+
+    <font color="green">// Output the information to the source passed</font>
+    out <font color="black">&#60;</font><font color="black">&#60;</font> <font color="maroon">"Movie: "</font> <font color="black">&#60;</font><font color="black">&#60;</font> <font color="blue">this</font><font color="black">-</font><font color="black">&#62;</font>getTitle<font color="black">(</font><font color="black">)</font> <font color="black">&#60;</font><font color="black">&#60;</font> endl; <font color="green">// this returns a string</font>
+    out <font color="black">&#60;</font><font color="black">&#60;</font> <font color="maroon">"Director: "</font> <font color="black">&#60;</font><font color="black">&#60;</font> <font color="blue">this</font><font color="black">-</font><font color="black">&#62;</font>getDirector<font color="black">(</font><font color="black">)</font> <font color="black">&#60;</font><font color="black">&#60;</font> endl; <font color="green">//this returns a string</font>
+    out <font color="black">&#60;</font><font color="black">&#60;</font> <font color="maroon">"Year: "</font> <font color="black">&#60;</font><font color="black">&#60;</font> <font color="blue">this</font><font color="black">-</font><font color="black">&#62;</font>getYear<font color="black">(</font><font color="black">)</font> <font color="black">&#60;</font><font color="black">&#60;</font> endl; <font color="green">// this returns an integer</font>
+    out <font color="black">&#60;</font><font color="black">&#60;</font> <font color="maroon">"Rating: "</font> <font color="black">&#60;</font><font color="black">&#60;</font> nmRating <font color="black">&#60;</font><font color="black">&#60;</font> endl; <font color="green">// this would return a Movie_Rating which has no cout function so it had to be transformed above</font>
+    out <font color="black">&#60;</font><font color="black">&#60;</font> <font color="maroon">"IMDB URL: "</font> <font color="black">&#60;</font><font color="black">&#60;</font> <font color="blue">this</font><font color="black">-</font><font color="black">&#62;</font>getURL<font color="black">(</font><font color="black">)</font> <font color="black">&#60;</font><font color="black">&#60;</font> endl <font color="black">&#60;</font><font color="black">&#60;</font> endl; <font color="green">// this returns a string</font>
+    out <font color="black">&#60;</font><font color="black">&#60;</font> <font color="maroon">"Actors: "</font> <font color="black">&#60;</font><font color="black">&#60;</font> endl;
+    <font color="blue">for</font> <font color="black">(</font><font color="blue">int</font> i <font color="black">=</font> <font color="maroon">0</font>; i <font color="black">&#60;</font> getNumberOfActors<font color="black">(</font><font color="black">)</font>; i<font color="black">+</font><font color="black">+</font><font color="black">)</font>
+        out <font color="black">&#60;</font><font color="black">&#60;</font> <font color="maroon">"   "</font> <font color="black">&#60;</font><font color="black">&#60;</font> actors_<font color="black">[</font>i<font color="black">]</font> <font color="black">&#60;</font><font color="black">&#60;</font> endl;
+<font color="black">}</font>
+</PRE>
+</BODY>
+</HTML>

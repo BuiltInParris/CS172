@@ -1,0 +1,56 @@
+Movie: Back To The Future
+Director: Robert Zemeckis
+Year: 1985
+Rating: PG
+IMDB URL: http://www.imdb.com/title/tt0088763/
+
+Actors: 
+   Michael J Fox
+   Bill Cosby
+   Ryan Seacrest
+Movie: TRON: Legacy
+Director: Joseph Kosinski
+Year: 2010
+Rating: PG
+IMDB URL: http://www.imdb.com/title/tt1104001/
+
+Actors: 
+   Jeff Bridges
+Movie: E.T. the Extra-Terrestrial
+Director: Steven Spielberg
+Year: 1982
+Rating: PG
+IMDB URL: http://www.imdb.com/title/tt0083866/
+
+Actors: 
+   
+   Dee Wallace
+   Henry Thomas
+   Peter Coyote
+   Robert MacNaughton
+   Drew Barrymore
+   
+Movie: Transformers: Revenge of the Fallen
+Director: Michael Bay
+Year: 2009
+Rating: PG13
+IMDB URL: http://www.imdb.com/title/tt1055369/
+
+Actors: 
+   Shia LaBeouf
+   Megan Fox
+   Josh Duhamel
+   Tyrese Gibson
+   John Turturro
+   
+Movie: Romeo + Juliet
+Director: Baz Luhrmann
+Year: 1996
+Rating: PG13
+IMDB URL: http://www.imdb.com/title/tt0117509/
+
+Actors: 
+   Leonardo DiCaprio
+   Claire Danes
+   John Leguizamo
+   Harold Parrineau
